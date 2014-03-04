@@ -1,0 +1,39 @@
+<html>
+<head>
+<style>
+
+body {
+	margin: 0px;
+
+	background: black;
+	text-align: center;
+}
+	
+</style>
+<script>
+
+window.onload = function(){
+
+	var imgTag = document.getElementsByTagName('img')[0];
+	function fetchImage(){
+		imgTag.src = '/data?t=' + Date.now();
+	};
+	
+	imgTag.onload = function(){
+		fetchImage();
+
+		imgTag.style.height = window.innerHeight;
+		imgTag.style.width = window.innerHeight * (640/480);
+
+
+	};	
+	
+	fetchImage();
+
+}
+</script>
+
+<body>
+<img/>
+</body>
+</html>
